@@ -29,12 +29,12 @@ export default {
 
   computed: {
     defaultCssClass() {
-      if (!this.cssClassName) return 'bg-primary text-white';
+      if (!this.cssClassName) return 'bg-primary text-black';
       return this.cssClassName;
     },
 
     defaultMsg() {
-      if (!this.msg) return 'Cadastro Rápido';
+      if (!this.msg) return 'Cadastro Escriba';
       return this.msg;
     }
   },
