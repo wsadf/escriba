@@ -57,9 +57,9 @@
               label-for="input-1"
             >
               <b-form-input
-                ref="birthInput"
+                ref="dataNascimentoInput"
                 id="input-1"
-                v-model="form.birth"
+                v-model="form.dataNascimento"
                 v-mask="['##/##/####']"
                 type="text"
                 required
@@ -131,7 +131,7 @@ function initialForm() {
   return {
     name: '',
     cpf: '',
-    birth: '',
+    dataNascimento: '',
   }
 }
 
