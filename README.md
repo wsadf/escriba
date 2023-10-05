@@ -1,4 +1,4 @@
-# cadastro-clientes-vue
+# cadastro-pessoas-vue
 
 Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o JSON Server.
 
