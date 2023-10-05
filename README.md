@@ -2,7 +2,7 @@
 
 Projeto de teste de front-end para a empresa Escriba cadastro de pessoas, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o JSON Server.
 
-#Tecnologias do projeto
+# Tecnologias do projeto
 Vue: Optei por utilizar Vue devido à minha familiaridade com a tecnologia, o que facilitou o desenvolvimento da aplicação com maior velocidade e agilidade.
 
 Bootstrap: Escolhi o Bootstrap porque se trata de um site simples, com poucas estilizações, e é uma biblioteca que já domino.
