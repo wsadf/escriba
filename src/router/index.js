@@ -12,7 +12,7 @@ const routes = [
     name: 'home',
     component: HomeView,
     meta: {
-      title: 'Cadastro Rápido',
+      title: 'Cadastro Escriba',
     },
   },
   {
@@ -20,7 +20,7 @@ const routes = [
     name: 'new-register',
     component: FormView,
     meta: {
-      title: 'Cadastro Rápido - Novo cadastro',
+      title: 'Cadastro Escriba - Novo cadastro',
     },
   },
   {
@@ -28,7 +28,7 @@ const routes = [
     name: 'edit-register',
     component: FormView,
     meta: {
-      title: 'Cadastro Rápido - Editar cadastro',
+      title: 'Cadastro Escriba - Editar cadastro',
     },
   },
   {
@@ -36,7 +36,7 @@ const routes = [
     name: 'about',
     component: NotFount,
     meta: {
-      title: 'Cadastro Rápido - Página não encontrada',
+      title: 'Cadastro Escriba - Página não encontrada',
     },
   }
 ]
