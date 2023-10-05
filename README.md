@@ -1,4 +1,4 @@
-# cadastro-pessoas-vue
+# Cadastro pessoas com Vue
 
 Projeto de teste de front-end para a empresa <strong>Escriba</strong> cadastro de pessoas, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o JSON Server.
 
