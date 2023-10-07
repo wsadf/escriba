@@ -263,14 +263,26 @@ export default {
     },
 
     onSubmit(event) {
-      event.preventDefault();
+    event.preventDefault();
 
+    if (this.isFormValid()) {
       if (this.newRegister) {
         this.createNewContact(this.form);
       } else {
         this.editContact(this.form);
       }
-    },
+    } else {
+      console.log('O formulário contém campos inválidos.');
+    }
+  },
+
+  isFormValid() {
+    const isNameValid = this.form.name.trim() !== '';
+    const isCPFValid = this.isValidCPF;
+    const isDataNascimentoValid = this.isValidDataNascimento;
+
+    return isNameValid && isCPFValid && isDataNascimentoValid;
+  },
 
     showModal(title) {
       this.$bvModal.msgBoxOk(title, {
