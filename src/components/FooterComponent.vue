@@ -1,7 +1,7 @@
 <template>
   <footer class="footer w-100">
     <b-container>
-      <p class="text-center small mb-0 py-1 text-white">
+      <p class="text-center small mb-0 py-1 text-black">
         © {{ currentYear }} - Todos direitos reservados
       </p>
     </b-container>
@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  background: #232629;
+  background: #FFC700;
   bottom: 0;
   left: 0;
   position: absolute;

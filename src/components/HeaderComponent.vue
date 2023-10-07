@@ -40,3 +40,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.header {
+  background-image: url('../assets/banner.jpg');
+  background-size: cover; /* Ajuste conforme necessário */
+  background-position: center center; /* Ajuste conforme necessário */
+  color: white;
+}
+</style>

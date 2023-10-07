@@ -6,7 +6,6 @@
       <div class="d-flex justify-content-sm-between flex-column flex-sm-row">
         <h2>{{ txtTitle }}</h2>
       </div>
-
       <b-row class="justify-content-center pt-5">
         <b-col md="8">
           <b-form @submit="onSubmit">
@@ -48,7 +47,7 @@
                 required
               />
             </b-form-group>
-            <p class="text-danger" v-if="form.cpf && !isValidCPF">CPF inválido</p>
+            <p class="text-danger" v-if="cpfError && form.cpf">CPF inválido</p>
 
 
             <b-form-group
@@ -166,6 +165,7 @@ export default {
       saveLoading: false,
       isValidCPF: false,
       isValidDataNascimento: true,
+      cpfError: false,
     }
   },
 
@@ -263,18 +263,24 @@ export default {
     },
 
     onSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
 
+  if (this.newRegister) {
+    // Página de criação
     if (this.isFormValid()) {
-      if (this.newRegister) {
-        this.createNewContact(this.form);
-      } else {
-        this.editContact(this.form);
-      }
+      console.log('Formulário válido, criando novo contato');
+      this.createNewContact(this.form);
     } else {
       console.log('O formulário contém campos inválidos.');
     }
-  },
+  } else {
+    // Página de edição
+      this.editContact(this.form);
+  }
+},
+
+
+
 
   isFormValid() {
     const isNameValid = this.form.name.trim() !== '';
@@ -323,21 +329,22 @@ export default {
     }
   },
 
-    validateCPF() {
+  validateCPF() {
   const cpf = this.form.cpf.replace(/\D+/g, "");
+  this.cpfError = false; // Reinicialize a variável cpfError
 
   if (cpf === "") {
-    this.isValidCPF = false;
+    this.cpfError = true;
     return;
   }
 
   if (/^(\d)\1{10}$/.test(cpf)) {
-    this.isValidCPF = false;
+    this.cpfError = true;
     return;
   }
 
   if (cpf.length !== 11) {
-    this.isValidCPF = false;
+    this.cpfError = true;
     return;
   }
 
@@ -355,7 +362,7 @@ export default {
   }
 
   if (remainder !== parseInt(cpf.substring(9, 10))) {
-    this.isValidCPF = false;
+    this.cpfError = true;
     return;
   }
 
@@ -371,12 +378,13 @@ export default {
   }
 
   if (remainder !== parseInt(cpf.substring(10, 11))) {
-    this.isValidCPF = false;
-    return;
+    this.cpfError = true;
   }
 
-  this.isValidCPF = true;
-}
+  // Atualize isValidCPF com base na validação final
+  this.isValidCPF = !this.cpfError;
+},
+
 
   },
 }
