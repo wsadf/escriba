@@ -1,8 +1,14 @@
-# cadastro-pessoas-vue
+# Cadastro pessoas com Vue
 
-Projeto de cadastro de contatos, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o JSON Server.
+Projeto de teste de front-end para a empresa <strong>Escriba</strong> cadastro de pessoas, no qual é possível visualizar, cadastrar, editar e excluir um contato. Os dados são armazenados na API utilizando o JSON Server.
 
-É possível visualizar o build do site no link [GitHub](https://github.com/wsadf/escriba). Este link é com API apenas modo de leitura, não sendo possível editar, excluir e criar um novo contato.
+# Tecnologias do projeto
+
+<strong>Vue:</strong> Optei por utilizar Vue devido à minha familiaridade com a tecnologia, o que facilitou o desenvolvimento da aplicação com maior velocidade e agilidade.
+
+<strong>Bootstrap:</strong> Escolhi o Bootstrap porque se trata de um site simples, com poucas estilizações, e é uma biblioteca que já domino.
+
+<strong>Axios:</strong> Utilizei o Axios para realizar a requisição dos dados da API, pois é uma biblioteca com a qual já estou familiarizado e que oferece facilidade de uso.
 
 # Configuração do Vue
 ## Project setup
