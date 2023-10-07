@@ -7,7 +7,7 @@
     <p class="pt-4 h5">Dados pessoais</p>
     <hr class="my-1" />
     <p class="mb-1">CPF: {{ detail.cpf }}</p>
-    <p class="mb-1">Data de nascimento: {{ detail.birth }}</p>
+    <p class="mb-1">Data de nascimento: {{ detail.dataNascimento }}</p>
 
     <template #modal-footer>
       <b-button
@@ -48,12 +48,6 @@ export default {
 
     detail() {
       return this.detailContact(this.id);
-    },
-
-    addressStreet() {
-      const { address, number, complement } = this.detail;
-      if (complement) return `${address}, ${number} - ${complement}`;
-      return `${address}, ${number}`
     },
 
     openModal: {

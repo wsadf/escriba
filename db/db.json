@@ -1,22 +1,10 @@
 {
   "pessoas": [
     {
-      "name": "Wesley ",
+      "name": "ww",
       "cpf": "016.032.176-06",
-      "birth": "09/04/1987",
+      "dataNascimento": "09/04/1987",
       "id": 1
-    },
-    {
-      "name": "Testeeee",
-      "cpf": "016.032.176-06",
-      "birth": "09/04/1987",
-      "id": 2
-    },
-    {
-      "name": "eeeeeee",
-      "cpf": "016.032.176-06",
-      "dataNascimento": "09/01/1987",
-      "id": 3
     }
   ]
 }

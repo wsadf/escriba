@@ -63,7 +63,9 @@
                 v-mask="['##/##/####']"
                 type="text"
                 required
+                @blur="validateDataNascimento"
               />
+              <p class="text-danger" v-if="form.dataNascimento && !isValidDataNascimento">Data de nascimento inválida</p>
             </b-form-group>
 
             <b-button
@@ -163,6 +165,7 @@ export default {
       modalFinished: false,
       saveLoading: false,
       isValidCPF: false,
+      isValidDataNascimento: true,
     }
   },
 
@@ -212,7 +215,6 @@ export default {
     ...mapActions(['getAllContacts']),
 
     clearForm() {
-      // const objClear = Object.keys(this.form).reduce((acc, curr) => ({...acc, [curr]: ""}), {});
       this.form = initialForm();
     },
 
@@ -277,6 +279,37 @@ export default {
       })
     },
 
+    validateDataNascimento() {
+    const dataNascimento = this.form.dataNascimento;
+
+    if (!dataNascimento) {
+      this.isValidDataNascimento = false;
+      return;
+    }
+
+    const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+    if (!dateRegex.test(dataNascimento)) {
+      this.isValidDataNascimento = false;
+      return;
+    }
+
+    const parts = dataNascimento.split('/');
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10);
+    const year = parseInt(parts[2], 10);
+
+    const today = new Date();
+    const minDate = new Date(today.getFullYear() - 120, today.getMonth(), today.getDate());
+    const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+    const inputDate = new Date(year, month - 1, day);
+
+    if (inputDate < minDate || inputDate > maxDate) {
+      this.isValidDataNascimento = false;
+    } else {
+      this.isValidDataNascimento = true;
+    }
+  },
 
     validateCPF() {
   const cpf = this.form.cpf.replace(/\D+/g, "");
